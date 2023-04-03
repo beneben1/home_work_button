@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <label for="username-input">Enter your username:</label>
+    <input type="text" id="username-input">
+    <button onclick="showResults()">Submit</button>
+    <div>pick any color</div>
+    <input type="text" id="colorInput">
+    <button onclick="changeColor()">Change Color</button>
+    <div>color list : red blue yellow</div>
+    <input id="arcolorsInput" placeholder="pick a color from list">
+    <button onclick="arColorsChange()">click</button>
+    <p id="length"></p>
+    <p id="backwards"></p>
+    <button id="moving-btn">Click me!</button>
+
+
+    <script>
+        function showResults() {
+
+            let username = document.getElementById("username-input").value;
+            let length = username.length;
+
+            document.getElementById("length").textContent = `Your username has ${length} letters.`;
+
+            let backwards = "";
+            for (let i = length - 1; i >= 0; i--) {
+                backwards += username[i];
+            }
+
+            document.getElementById("backwards").textContent = `Your username backwards is: ${backwards}`;
+        }
+
+        function changeColor() {
+            let colorInput = document.getElementById("colorInput").value;
+            document.body.style.backgroundColor = colorInput;
+        }
+        function arColorsChange() {
+            const color = arcolorsInput.value
+            const colors = ["red", "blue", "yellow"]
+            if (colors.includes(color))
+                document.body.style.backgroundColor = color;
+
+        }
+       
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
