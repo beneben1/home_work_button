@@ -45,7 +45,7 @@
             document.body.style.backgroundColor = colorInput;
         }
         function arColorsChange() {
-            const color = arcolorsInput.value
+            const color = arcolorsInput.value.toLowerCase()
             const colors = ["Red", "Blue", "Yellow"]
             if (colors.includes(color))
                 document.body.style.backgroundColor = color;
